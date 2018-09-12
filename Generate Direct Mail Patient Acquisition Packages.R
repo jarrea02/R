@@ -2,6 +2,7 @@ a = c('IP','OP')
 b = c('X')
 c = c('6','7','8')
 d = c('A','B')
+a1=c('C','D')
 #a1 = c('C','D','E','F')
 
 
@@ -12,6 +13,7 @@ e = c('Inpatient','Outpatient')
 f = c('')
 g = c('age 60s','age 70s','age 80s')
 h = c('Within 11 ZIPs','Outside 11 ZIPs')
+e1 = c('Bookmark','No Bookmark')
 #e1 = c('December','January','March','April')
 
 
@@ -30,11 +32,11 @@ for (i in a){
       
       for (l in d){
         
-      #  for (m in a1){
+       for (m in a1){
         
-         x = c(x,paste0(i,j,k,l))
+         x = c(x,paste0(i,j,k,l,m))
         
-       #  }
+        }
         
       }
       
@@ -54,9 +56,9 @@ for (i in e){
       
       for (l in h){
         
-   #     for(m in e1)
+       for(m in e1){
         
-        y = c(y,paste(i,j,k,l, sep = ', '))
+        y = c(y,paste(i,j,k,l,m, sep = ', '))
         
      }
       
@@ -73,5 +75,5 @@ for (i in e){
 df  = data.frame(Pkg=x,Desc = y)
 df$Desc =  gsub(', ,',',',df$Desc)
 df = unique(df)
-write.csv(df, file = "18QN07M1 Pakages for June Patient appeals.csv", row.names = FALSE)
+write.csv(df, file = "18QM08M3.csv", row.names = FALSE)
 

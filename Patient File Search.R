@@ -1,5 +1,6 @@
 library(stringr)
 library(lubridate)
+library(dbplyr)
 
 options(stringsAsFactors = FALSE)
 
@@ -21,9 +22,9 @@ cols = c("MRN",
          "DATE_OF_VISIT_WITH_PHYSICIAN",
          "TYPE_OF_VISIT"  )
 
-dir = "Returned Files Copy/"
+dir = "F:/Development/Adrian/Files from C - 32 bit Build/Returned Files Copy"
 
-l =  list.files("Returned Files Copy", pattern = '(MSH)')
+l =  list.files(dir, pattern = '(MSH)')
 
 dat = data.frame()
 
@@ -32,7 +33,7 @@ for( i in l){
   
   name = str_replace_all(i," ","_")
   
- a = read.csv(paste0(dir,i))
+ a = read.csv(paste0(dir,'/',i))
  colnames(a)[which(names(a) == "HOME_PHONE_NUMBER")] <- "HOME_PHONE"
  colnames(a)[which(names(a) == "PHONE_NUMBER")] <- "HOME_PHONE"
  colnames(a)[which(names(a) == "PHONE")] <- "HOME_PHONE"
@@ -100,13 +101,13 @@ test11 = test1[order(-test1$DATE_OF_VISIT_WITH_PHYSICIAN),]
 test1 = test1[!duplicated(test22[c("MRN")]),]
 table(test1$PHYSICIAN_NAME)
 
-write.csv(test1, "Patient Data ECTRIMS.csv")
+write.csv(dat, "Patient Data ECTRIMS.csv")
 
 
+dplyr::filter( grepl("Psych",dat$MD_DEPARTMENT))
 
 
-
-
+class(dat$MD_DEPARTMENT)
 
 
 
