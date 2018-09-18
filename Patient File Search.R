@@ -58,20 +58,20 @@ for( i in l){
 #test = `2016_09_30_Multiple_MSH_Physicians.csv`[,cols]
 
 
-test2 = dat[dat$PHYSICIAN_NAME == "Sheryl Green"|
-              dat$PHYSICIAN_NAME == "Elisa Port"|
-              dat$PHYSICIAN_NAME == "Amy Tiersten"|
-              dat$PHYSICIAN_NAME == "Christina Weltz"|
-              dat$PHYSICIAN_NAME == "Jaime Alberty"|
-              dat$PHYSICIAN_NAME == "Aarti Bhardwaj"|
-              dat$PHYSICIAN_NAME == "Hanna Irie"|
-              dat$PHYSICIAN_NAME == "Laurie Margolies"|
-              dat$PHYSICIAN_NAME == "Paul H Schmidt"|
-              dat$PHYSICIAN_NAME == "Paul Schmidt"|
-              dat$PHYSICIAN_NAME == "Charles Shapiro"|
+test2 = dat[dat$PHYSICIAN_NAME == "Alan Copperman"|
+              dat$PHYSICIAN_NAME == "Eric Flisser"|
+              dat$PHYSICIAN_NAME == "Lawrence Grunfeld"|
+              dat$PHYSICIAN_NAME == "Beth McAvey"|
+              dat$PHYSICIAN_NAME == "Tanmoy Mukherjee"|
+              dat$PHYSICIAN_NAME == "Raymond Sandler"|
+              dat$PHYSICIAN_NAME == "Daniel Stein"|
+              dat$PHYSICIAN_NAME == "Marla Dubinsky"|
+              dat$PHYSICIAN_NAME == "Bruce Sands"|
+              dat$PHYSICIAN_NAME == "Jean-Frederick Colombel"|
+              dat$PHYSICIAN_NAME == "James Marion"|
               
-              dat$PHYSICIAN_NAME == "Richard Bakst"|
-              dat$PHYSICIAN_NAME == "Emily Sonnenblick"
+              dat$PHYSICIAN_NAME == "Marc Chapman"#|
+             # dat$PHYSICIAN_NAME == "Emily Sonnenblick"
             
                    ,]
 
